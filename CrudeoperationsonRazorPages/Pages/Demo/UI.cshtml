@@ -1,0 +1,11 @@
+﻿@page
+@model CrudeoperationsonRazorPages.Pages.Demo.UIModel
+@{
+}
+<h3>@Model.greeting</h3>
+<p>@ViewData["Message"]</p>
+<form method="post">
+	<input asp-for="Name"/>
+	<input asp-for="age"/>
+	<button type="submit">Submit</button>	
+</form>

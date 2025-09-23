@@ -1,0 +1,106 @@
+﻿@page
+@model CrudeoperationsonRazorPages.Pages.Account.SignUpModel
+
+@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: url('/images/libraryBooks.jpg') no-repeat center center fixed;
+        background-size: cover;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .signup-card {
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 1.2rem;
+        padding: 3rem 2rem;
+        width: 400px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        position: relative;
+    }
+
+        .signup-card::before {
+            content: url('/images/library-logo.png'); /* Optional logo */
+            display: block;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px auto;
+        }
+
+        .signup-card h2 {
+            margin-bottom: 1.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            letter-spacing: 0.5px;
+        }
+
+    .form-control {
+        border-radius: 0.5rem;
+        padding: 0.75rem 1rem;
+        border: 1px solid #ced4da;
+        transition: all 0.3s;
+        margin-bottom: 1rem;
+    }
+
+        .form-control:focus {
+            border-color: #6c63ff;
+            box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
+        }
+
+    .btn-primary {
+        background-color: #6c63ff;
+        border-color: #6c63ff;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: all 0.3s;
+        margin-top: 10px;
+    }
+
+        .btn-primary:hover {
+            background-color: #5a54d1;
+            border-color: #5a54d1;
+        }
+
+    .signin-link {
+        margin-top: 1rem;
+        font-size: 0.95rem;
+        color: #555;
+    }
+
+        .signin-link a {
+            color: #6c63ff;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+            .signin-link a:hover {
+                text-decoration: underline;
+            }
+</style>
+
+<div class="signup-card">
+    <h2>Library Management System</h2>
+    <form method="post">
+        <input type="text" class="form-control" name="FullName" placeholder="Full Name" required />
+        <input type="email" class="form-control" name="Email" placeholder="Email" required />
+        <input type="password" class="form-control" name="Password" placeholder="Password" required />
+        <input type="password" class="form-control" name="ConfirmPassword" placeholder="Confirm Password" required />
+        <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+    </form>
+    <div class="signin-link">
+        Already have an account? <a asp-page="/Account/SignIn">Sign In</a>
+    </div>
+</div>
