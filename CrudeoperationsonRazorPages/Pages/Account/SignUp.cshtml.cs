@@ -38,7 +38,7 @@ namespace CrudeoperationsonRazorPages.Pages.Account
             };
                _context.UserAccounts.Add(userAccount);
                 await _context.SaveChangesAsync();
-                return RedirectToPage("/Account/SignIn");
+            return RedirectToPage("/Account/SignIn");
         }
     }
 }

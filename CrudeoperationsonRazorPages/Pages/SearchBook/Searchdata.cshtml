@@ -1,0 +1,52 @@
+﻿@page
+@model CrudeoperationsonRazorPages.Pages.SearchBook.SearchdataModel
+@{
+    ViewData["Title"] = "Search Book Data";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center text-primary mb-4">📚 Search Books</h2>
+
+    <!-- Search Form -->
+    <form method="get" class="d-flex justify-content-center mb-4">
+        <input type="text" name="searchitem" value="@Model.searchitem"
+               class="form-control w-50 me-2" placeholder="🔍 Search by title..." />
+        <button type="submit" class="btn btn-success">Search</button>
+    </form>
+
+    <!-- Table -->
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <table class="table table-hover table-bordered text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.itemlist != null && Model.itemlist.Any())
+                    {
+                        @foreach (var item in Model.itemlist)
+                        {
+                            <tr>
+                                <td>@item.title</td>
+                                <td>@item.Author</td>
+                           
+                                <td>@item.Description</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-danger fw-bold">No books found!</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

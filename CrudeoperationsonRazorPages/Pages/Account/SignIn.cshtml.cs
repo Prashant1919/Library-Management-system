@@ -22,7 +22,7 @@ namespace CrudeoperationsonRazorPages.Pages.Account
         public async Task<IActionResult> OnPostAsync()
         {
             if(!ModelState.IsValid)
-            {
+            {                
                 return Page();
             }
             var user = await _context.UserAccounts
@@ -39,13 +39,13 @@ namespace CrudeoperationsonRazorPages.Pages.Account
             {
                 CookieOptions options = new CookieOptions
                 {
-                    Expires = DateTime.Now.AddDays(7),
+                    Expires = DateTime.Now.AddDays(2),
                     HttpOnly = true,
                     IsEssential = true
                 };
                 Response.Cookies.Append("UserEmail", user.Email, options);
                 Response.Cookies.Append("UserId", user.Id.ToString(), options);
-            }
+            }       
 
             // In real applications, set up authentication cookie or token here
             return RedirectToPage("/BooksPage/Index");

@@ -18,7 +18,8 @@ namespace CrudeoperationsonRazorPages.Pages.Books
 
         {
             var userEmail = HttpContext.Session.GetString("UserEmail")
-             ?? Request.Cookies["UserEmail"];
+             ?? Request.Cookies["UserEmail"]
+             ?? Request.Cookies["UserId"];
             if (string.IsNullOrEmpty(userEmail))
             {
                 return RedirectToPage("/Account/SignIn"); // not logged in
